@@ -1145,8 +1145,8 @@
                 <div class="live-dot"></div>
                 <span style="font-size: 0.9rem; font-weight: 700;">🔴 EN DIRECT</span>
             </div>
-            <span class="banner-text">Reunion RGB multimedia - Paris/Cameroun/Irlande</span>
-            <a href="#galerie" class="banner-cta">Participer</a>
+            <span class="banner-text">Conférence Intelligence Artificielle 2025 - Palais des Congrès • 14h30-18h00</span>
+            <a href="#galerie" class="banner-cta">Regarder le Live</a>
         </div>
         <button class="close-banner" onclick="closeBanner()">×</button>
     </div>
@@ -1584,4 +1584,204 @@
                 <form>
                     <div class="form-group">
                         <label for="nom">Nom & Prénom *</label>
-                        <input type="text" id="nom" name="nom" require
+                        <input type="text" id="nom" name="nom" required placeholder="Votre nom complet">
+                    </div>
+                    <div class="form-group">
+                        <label for="entreprise">Entreprise / Organisation</label>
+                        <input type="text" id="entreprise" name="entreprise" placeholder="Nom de votre structure">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email professionnel *</label>
+                        <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="+33 1 XX XX XX XX">
+                    </div>
+                    <div class="form-group">
+                        <label for="projet">Décrivez votre projet *</label>
+                        <textarea id="projet" name="projet" rows="4" required placeholder="Type d'événement, lieu, nombre de participants, besoins spécifiques..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+                        Envoyer la demande
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>RGBMOOV</h3>
+                <p>Agence de production audiovisuelle spécialisée dans la captation et le streaming d'événements prestigieux. Technologie de pointe, équipes expertes, service premium.</p>
+                <p style="font-size: 0.9rem; margin-top: 1rem;"><strong>SIRET :</strong> 123 456 789 00010<br>
+                <strong>TVA :</strong> FR12345678901</p>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Captation Multi-Caméras</a></li>
+                    <li><a href="#services">Streaming Live</a></li>
+                    <li><a href="#services">Post-Production</a></li>
+                    <li><a href="#services">Archivage Cloud</a></li>
+                    <li><a href="#services">Régie Mobile</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Secteurs</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Événements Corporates</a></li>
+                    <li><a href="#">Spectacles & Concerts</a></li>
+                    <li><a href="#">Conférences</a></li>
+                    <li><a href="#">Galas & Cérémonies</a></li>
+                    <li><a href="#">Formations</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 RGBMOOV. Tous droits réservés. | <a href="#" style="color: var(--text-secondary);">Mentions légales</a> | <a href="#" style="color: var(--text-secondary);">Politique de confidentialité</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(15, 23, 42, 0.98)';
+                header.style.borderBottom = '1px solid rgba(51, 65, 85, 0.8)';
+            } else {
+                header.style.background = 'rgba(15, 23, 42, 0.95)';
+                header.style.borderBottom = '1px solid var(--border-light)';
+            }
+        });
+
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre demande ! Nous vous recontacterons dans les 24h.');
+        });
+
+        document.body.classList.add('banner-visible');
+
+        function closeBanner() {
+            const banner = document.getElementById('liveBanner');
+            banner.style.transform = 'translateY(-100%)';
+            banner.style.opacity = '0';
+            document.body.classList.remove('banner-visible');
+            
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
+        }
+
+        const videoData = {
+            'concert-philharmonie': {
+                title: 'Concert Symphonique - Philharmonie de Paris',
+                description: 'Captation exceptionnelle avec l\'Orchestre de Paris. 8 caméras 4K, prise de son immersive, diffusion internationale sur Arte Concert. Une production technique et artistique de référence.'
+            },
+            'opera-bastille': {
+                title: 'La Traviata - Opéra Bastille',
+                description: 'Production complète de l\'opéra de Verdi avec Roberto Alagna. Réalisation multi-angles, captation des décors somptueux, diffusion live pour 200K spectateurs.'
+            },
+            'festival-jazz': {
+                title: 'Festival Jazz à Juan',
+                description: 'Couverture du prestigieux festival de jazz. Captation live de concerts en plein air avec acoustique exceptionnelle.'
+            },
+            'ballet-opera': {
+                title: 'Ballet de l\'Opéra de Paris',
+                description: 'Captation d\'une représentation exceptionnelle du Ballet de l\'Opéra. Chorégraphie classique filmée avec 6 caméras HD.'
+            },
+            'concert-rock': {
+                title: 'Concert Rock - AccorArena',
+                description: 'Production complète d\'un concert rock devant 20,000 spectateurs. Éclairages spectaculaires et son immersif.'
+            },
+            'tech-summit': {
+                title: 'TechCrunch Disrupt Paris 2025',
+                description: 'Couverture complète de l\'événement tech européen de référence. 4 scènes simultanées, diffusion multi-langues, interaction temps réel avec participants distants.'
+            },
+            'viva-tech': {
+                title: 'VivaTech 2025',
+                description: 'Production multi-jours du plus grand salon tech européen. Diffusion continue avec interviews d\'experts et démonstrations en direct.'
+            },
+            'convention-sncf': {
+                title: 'Convention SNCF Connect',
+                description: 'Événement corporate avec présentations stratégiques et démonstrations produits. Diffusion interne sécurisée pour 3000 collaborateurs.'
+            },
+            'keynote-apple': {
+                title: 'Keynote Apple France',
+                description: 'Lancement produit avec production haut de gamme. Captation 4K, éclairages dynamiques et diffusion simultanée multi-plateformes.'
+            },
+            'gala-charite': {
+                title: 'Gala de Charité International - Opéra de Paris',
+                description: 'Soirée de prestige avec artistes internationaux. Production haut de gamme, diffusion sur 5 continents, levée de fonds record de 2M€ grâce à la portée digitale.'
+            },
+            'ceremonie-cannes': {
+                title: 'Cérémonie Festival de Cannes',
+                description: 'Captation de la montée des marches et cérémonie de clôture. Production broadcast avec diffusion internationale en direct.'
+            },
+            'prix-moliere': {
+                title: 'Nuit des Molières',
+                description: 'Cérémonie annuelle récompensant l\'excellence théâtrale française. Captation multi-caméras et diffusion en direct sur France TV.'
+            },
+            'gala-unesco': {
+                title: 'Gala UNESCO',
+                description: 'Événement diplomatique avec performances artistiques internationales. Production élégante avec traduction simultanée en 6 langues.'
+            }
+        };
+
+        function openModal(videoId) {
+            const modal = document.getElementById('videoModal');
+            const title = document.getElementById('modalTitle');
+            const description = document.getElementById('modalDescription');
+            
+            if (videoData[videoId]) {
+                title.textContent = videoData[videoId].title;
+                description.textContent = videoData[videoId].description;
+            }
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        document.getElementById('videoModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
